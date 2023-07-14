@@ -5,7 +5,7 @@ import { PropTypes } from 'prop-types';
 export const Counter = ({ option, onLeaveFeedback }) => {
 	return (
 		<CounterList>
-			{Object.keys(option).map(el => {
+			{option.map(el => {
 				return (
 					<CounterItem key={nanoid()}>
 						<Button
@@ -23,6 +23,6 @@ export const Counter = ({ option, onLeaveFeedback }) => {
 };
 
 Counter.propTypes = {
-	option: PropTypes.object.isRequired,
+	option: PropTypes.array.isRequired,
 	onLeaveFeedback: PropTypes.func.isRequired,
 };
